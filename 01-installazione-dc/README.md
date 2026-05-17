@@ -103,5 +103,3 @@ al termine del modulo.
   autenticazione del dominio
 - **Identity and Access Management** (SY0-701 – 4.6): 
   gestione centralizzata delle identità tramite AD
-- **Identity and Access Management** (SY0-701 – 4.6): 
-  gestione centralizzata delle identità tramite AD
