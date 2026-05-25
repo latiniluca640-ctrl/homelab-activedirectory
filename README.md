@@ -18,7 +18,7 @@ logging e analisi degli eventi di sicurezza.
 | # | Modulo | Stato |
 |---|--------|-------|
 | 01 | Installazione Windows Server e configurazione DC | ✅ Completato |
-| 02 | Utenti, Gruppi e Organizational Units | 🔄 In corso |
+| 02 | Utenti, Gruppi e Organizational Units | ✅ Completato |
 | 03 | Group Policy | ⏳ Pianificato |
 | 04 | Hardening | ⏳ Pianificato |
 | 05 | Logging e Sysmon | ⏳ Pianificato |
