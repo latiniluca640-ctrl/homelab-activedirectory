@@ -12,11 +12,16 @@ amministrativa di Active Directory.
 Accesso tramite Server Manager → Strumenti →
 Gestione Criteri di gruppo.
 
-![GPMC apertura](gpmc-apertura.png)
+![GPMC apertura](screenshots/gpmc-apertura.png)
 
 ### 2. GPO_PasswordPolicy
 Creata GPO collegata a `LAB_UTENTI` per imporre
-requisiti minimi di sicurezza sulle password.
+requisiti minimi di sicurezza sulle password e
+limitare i tentativi di accesso.
+
+![Creazione GPO](screenshots/gpo-creazione-passwordpolicy.png)
+
+**Criteri password:**
 
 | Impostazione | Valore |
 |---|---|
@@ -25,8 +30,17 @@ requisiti minimi di sicurezza sulle password.
 | Validità massima | 90 giorni |
 | Cronologia password | 10 password memorizzate |
 
-![Creazione GPO](gpo-creazione-passwordpolicy.png)
-![Valori password policy](gpo-passwordpolicy-valori.png)
+![Valori password policy](screenshots/gpo-passwordpolicy-valori.png)
+
+**Criteri di blocco account:**
+
+| Impostazione | Valore |
+|---|---|
+| Blocca account per | 30 min |
+| Reimposta contatore dopo | 30 min |
+| Soglia tentativi | 5 tentativi non validi |
+
+![Valori blocco account](screenshots/blocco-account.png)
 
 ### 3. GPO_BloccaRimovibili
 Creata GPO per bloccare l'accesso a tutti i dispositivi
@@ -37,10 +51,6 @@ Dispositivi bloccati: CD/DVD, floppy, dischi rimovibili,
 unità nastro, dispositivi portatili Windows.
 Accessi bloccati per ogni categoria: lettura, scrittura,
 esecuzione.
-
-**Security Filtering:** la GPO si applica solo a
-`GRP_Utenti_Standard`. Gli amministratori non sono
-soggetti al blocco per poter gestire il sistema.
 
 Soluzione tecnica adottata: `Authenticated Users`
 mantenuto nel Security Filtering con sola **Lettura**
@@ -54,11 +64,15 @@ esclusivamente a `GRP_Utenti_Standard`.
 > (es. BadUSB). Per una protezione completa valutare
 > USB device whitelisting e restrizioni sugli script.
 
-![Creazione GPO](gpo-creazione-bloccaRimovibili.png)
-![Voci archivi rimovibili](gpo-bloccaRimovibili-voci.png)
-![Ambito e filtri di sicurezza](gpo-ambito-bloccaRimovibili.png)
-![Authenticated Users - solo lettura](gpo-filtro-authenticated-nonapplica.png)
-![GRP_Utenti_Standard - applica policy](gpo-filtro-gruppostd-applica.png)
+![Voci archivi rimovibili](screenshots/gpo-bloccaRimovibili-voci.png)
+![Ambito e filtri di sicurezza](screenshots/gpo-ambito-bloccaRimovibili.png)
+
+**Security Filtering:** la GPO si applica solo a
+`GRP_Utenti_Standard`. Gli amministratori non sono
+soggetti al blocco per poter gestire il sistema.
+
+![Authenticated Users - solo lettura](screenshots/gpo-filtro-authenticated-nonapplica.png)
+![GRP_Utenti_Standard - applica policy](screenshots/gpo-filtro-gruppostd-applica.png)
 
 ### 4. GPO_BannerLogin
 Creata GPO per mostrare un avviso legale prima
@@ -71,17 +85,55 @@ Applicata a tutti gli utenti senza Security Filtering.
 | Titolo | AVVISO - Accesso Autorizzato |
 | Testo | Sistema monitorato. L'accesso è consentito solo agli utenti autorizzati. Ogni attività è registrata. |
 
-![Creazione GPO](gpo-creazione-bannerlogin.png)
-![Banner titolo](gpo-banner-titolo.png)
-![Banner testo](gpo-banner-testo.png)
+![Banner titolo](screenshots/gpo-banner-titolo.png)
+![Banner testo](screenshots/gpo-banner-testo.png)
+
+### 5. GPO_RestrizioniUtenti
+Creata GPO per limitare gli strumenti di sistema
+accessibili agli utenti standard, riducendo la
+superficie di attacco in caso di compromissione
+di un account.
+
+**Blocco CMD:**
+
+| Impostazione | Valore |
+|---|---|
+| Impedisci accesso al prompt dei comandi | Abilitato |
+| Disabilita elaborazione script batch | Sì |
+
+![Blocco CMD](screenshots/blocco-CMD.png)
+
+**Rimozione Task Manager:**
+
+| Impostazione | Valore |
+|---|---|
+| Rimuovi Gestione attività | Abilitato |
+
+![Rimozione Task Manager](screenshots/rimozione-taskmanager.png)
+
+**Restrizioni PowerShell:**
+
+| Impostazione | Valore |
+|---|---|
+| Esecuzione script | Solo script firmati |
+| Registrazione blocchi di script | Abilitata |
+
+![Restrizioni PowerShell](screenshots/restrizioni-powershell.png)
+
+**Security Filtering:** applicata solo a
+`GRP_Utenti_Standard`.
+
+![Authenticated Users - solo lettura](screenshots/autenticated-non-applica.png)
+![GRP_Utenti_Standard - applica policy](screenshots/utentestandard-applica.png)
 
 ## Risultato
-Tre GPO attive collegate a `LAB_UTENTI`:
+Quattro GPO attive collegate a `LAB_UTENTI`:
 - `GPO_PasswordPolicy` — ordine 1
 - `GPO_BloccaRimovibili` — ordine 2
 - `GPO_BannerLogin` — ordine 3
+- `GPO_RestrizioniUtenti` — ordine 4
 
-![Riepilogo GPO collegate](gpo-riepilogo-lab-utenti.png)
+![Riepilogo GPO collegate](screenshots/gpo-riepilogo-lab-utenti.png)
 
 ## Snapshot
 `04-GroupPolicy` — stato del sistema al termine
@@ -99,3 +151,8 @@ del modulo.
   GPO come controllo tecnico per protezione dei dati
 - **Security Controls** (SY0-701 – 1.1):
   GPO come esempio di controllo preventivo automatizzato
+- **Hardening** (SY0-701 – 4.1):
+  restrizioni CMD, PowerShell e Task Manager
+  riducono la superficie di attacco
+- **Brute Force Protection** (SY0-701 – 2.4):
+  blocco account dopo 5 tentativi falliti
