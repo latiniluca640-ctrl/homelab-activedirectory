@@ -12,9 +12,8 @@ Create due OU per separare logicamente utenti e gruppi:
 - `LAB_UTENTI` — contiene gli account utente
 - `LAB_GRUPPI` — contiene i gruppi di sicurezza
 
-![ADUC aperto](utenti-e-computer.png)
-![Creazione OU LAB_UTENTI](ou-utenti.png)
-![Creazione OU LAB_GRUPPI](ou-gruppi.png)
+![Creazione OU LAB_UTENTI](screenshots/ou-utenti.png)
+![Creazione OU LAB_GRUPPI](screenshots/ou-gruppi.png)
 
 ### 2. Creazione utenti
 Creati tre utenti nella OU `LAB_UTENTI`:
@@ -25,13 +24,15 @@ Creati tre utenti nella OU `LAB_UTENTI`:
 | G.Bianchi | Giulia Bianchi | Utente standard |
 | Admin.Test | Admin Test | Account privilegiato |
 
+![Creazione utente](screenshots/creazione-utente.png)
+![Utenti nella OU](screenshots/unità-utenti.png)
+
 Best practice applicata: **"Cambiamento password 
 all'accesso successivo"** su tutti gli account — 
 garantisce che solo l'utente conosca la propria password.
 
-![Creazione utente](creazione-utente.png)
-![Impostazione password](imposta-password.png)
-![Utenti nella OU](unità-utenti.png)
+![Impostazione password](screenshots/imposta-password.png)
+
 
 ### 3. Creazione gruppi
 Creati due gruppi di sicurezza nella OU `LAB_GRUPPI`:
@@ -44,8 +45,8 @@ Creati due gruppi di sicurezza nella OU `LAB_GRUPPI`:
 Scelto il tipo **Sicurezza** invece di Distribuzione 
 per poter assegnare permessi alle risorse del dominio.
 
-![Creazione gruppo](creazione-gruppo.png)
-![Gruppi nella OU](unità-gruppi.png)
+![Creazione gruppo](screenshots/creazione-gruppo.png)
+![Gruppi nella OU](screenshots/unità-gruppi.png)
 
 ### 4. Assegnazione utenti ai gruppi
 
@@ -58,8 +59,8 @@ Separazione tra utenti standard e account privilegiato —
 applicazione del principio di **Least Privilege**: ogni 
 utente ha solo i permessi necessari al proprio ruolo.
 
-![Membri GRP_Utenti_Standard](gruppo-utentistandard.png)
-![Membri GRP_Amministratori](gruppo-utentiadmin.png)
+![Membri GRP_Utenti_Standard](screenshots/gruppo-utentistandard.png)
+![Membri GRP_Amministratori](screenshots/gruppo-utentiadmin.png)
 
 ## Risultato
 Struttura AD organizzata con OU, utenti e gruppi. 
