@@ -27,15 +27,16 @@ tecnico consultabile.
 | 01 | Installazione Windows Server e configurazione DC | ✅ Completato |
 | 02 | Utenti, Gruppi e Organizational Units | ✅ Completato |
 | 03 | Group Policy | ✅ Completato |
-| 04 | NPS / RADIUS | ⏳ Pianificato |
-| 05 | PKI e Active Directory Certificate Services | ⏳ Pianificato |
-| 06 | Segmentazione di rete e pfSense | ⏳ Pianificato |
-| 07 | VM Client Windows | ⏳ Pianificato |
-| 08 | Kali Linux — Nmap, OpenVAS, OpenSCAP e CIS Benchmark | ⏳ Pianificato |
-| 09 | Metasploitable — Attacco e difesa | ⏳ Pianificato |
+| 04 | Kali Linux — Setup, configurazione e test di sicurezza progressivi | ⏳ Pianificato |
+| 05 | NPS / RADIUS | ⏳ Pianificato |
+| 06 | PKI e Active Directory Certificate Services | ⏳ Pianificato |
+| 07 | Segmentazione di rete e pfSense | ⏳ Pianificato |
+| 08 | VM Client Windows | ⏳ Pianificato |
+| 09 | Mail server interno — SPF, DKIM, DMARC | ⏳ Pianificato |
 | 10 | Sysmon, Audit Logging e DLP | ⏳ Pianificato |
 | 11 | Wazuh SIEM — ELK Stack, Zabbix, SNMP, MIB e ntopng | ⏳ Pianificato |
-| 12 | Ansible — Automazione configurazioni e patch | ⏳ Pianificato |
+| 12 | Metasploitable — Test infrastruttura difensiva | ⏳ Pianificato |
+| 13 | Ansible — Automazione configurazioni e patch | ⏳ Pianificato |
 
 ## Note
 - Questo repository è in continua evoluzione —
