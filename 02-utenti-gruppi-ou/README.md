@@ -17,9 +17,8 @@ Policy si applicano a livello di OU, quindi la struttura
 scelta ora determinerà come verranno gestiti i permessi 
 nei moduli successivi.
 
-![ADUC aperto](utenti-e-computer.png)
-![Creazione OU LAB_UTENTI](ou-utenti.png)
-![Creazione OU LAB_GRUPPI](ou-gruppi.png)
+![Creazione OU LAB_UTENTI](screenshots/ou-utenti.png)
+![Creazione OU LAB_GRUPPI](screenshots/ou-gruppi.png)
 
 ### 2. Creazione utenti
 Creati tre utenti nella OU `LAB_UTENTI`:
@@ -34,9 +33,9 @@ Best practice applicata: **"Cambiamento password
 all'accesso successivo"** su tutti gli account — 
 garantisce che solo l'utente conosca la propria password.
 
-![Creazione utente](creazione-utente.png)
-![Impostazione password](imposta-password.png)
-![Utenti nella OU](unità-utenti.png)
+![Creazione utente](screenshots/creazione-utente.png)
+![Impostazione password](screenshots/imposta-password.png)
+![Utenti nella OU](screenshots/unità-utenti.png)
 
 ### 3. Creazione gruppi
 Creati due gruppi di sicurezza nella OU `LAB_GRUPPI`:
@@ -50,8 +49,8 @@ Scelto il tipo **Sicurezza** invece di Distribuzione
 per poter assegnare permessi alle risorse del dominio 
 nei moduli successivi.
 
-![Creazione gruppo](creazione-gruppo.png)
-![Gruppi nella OU](gruppi-creati.png)
+![Creazione gruppo](screenshots/creazione-gruppo.png)
+![Gruppi nella OU](screenshots/unità-gruppi.png)
 
 ### 4. Assegnazione utenti ai gruppi
 
@@ -65,8 +64,8 @@ previsto. La distinzione tra utenti standard e account
 amministrativo sarà applicata concretamente nel modulo 
 successivo tramite Group Policy Objects (GPO).
 
-![Membri GRP_Utenti_Standard](gruppo-utentistandard.png)
-![Membri GRP_Amministratori](gruppo-utentiadmin.png)
+![Membri GRP_Utenti_Standard](screenshots/gruppo-utentistandard.png)
+![Membri GRP_Amministratori](screenshots/gruppo-utentiadmin.png)
 
 ## Risultato
 Struttura AD organizzata con OU, utenti e gruppi. 
@@ -81,9 +80,4 @@ al termine del modulo.
 ## Collegamento con Security+
 - **AAA** (SY0-701 – 1.2): gestione centralizzata 
   delle identità tramite AD
-- **Least Privilege** (SY0-701 – 2.3): separazione 
-  degli utenti in gruppi in base al ruolo — i permessi 
-  effettivi verranno applicati nel modulo GPO
-- **Identity and Access Management** (SY0-701 – 4.6): 
-  gruppi di sicurezza come base per il controllo 
-  degli accessi
+- **Least Privilege** (SY0-701 –
