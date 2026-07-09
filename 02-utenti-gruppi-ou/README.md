@@ -80,4 +80,9 @@ al termine del modulo.
 ## Collegamento con Security+
 - **AAA** (SY0-701 – 1.2): gestione centralizzata 
   delle identità tramite AD
-- **Least Privilege** (SY0-701 –
+- **Least Privilege** (SY0-701 – 2.3): separazione 
+  degli utenti in gruppi in base al ruolo — i permessi 
+  effettivi verranno applicati nel modulo GPO
+- **Identity and Access Management** (SY0-701 – 4.6): 
+  gruppi di sicurezza come base per il controllo 
+  degli accessi
