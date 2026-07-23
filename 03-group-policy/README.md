@@ -123,7 +123,7 @@ di un account.
 **Security Filtering:** applicata solo a
 `GRP_Utenti_Standard`.
 
-![Authenticated Users - solo lettura](screenshots/autenticated-non-applica.png)
+![Authenticated Users - solo lettura](screenshots/autenticated-nonapplica.png)
 ![GRP_Utenti_Standard - applica policy](screenshots/utentestandard-applica.png)
 
 ## Risultato
