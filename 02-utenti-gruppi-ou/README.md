@@ -17,6 +17,8 @@ Policy si applicano a livello di OU, quindi la struttura
 scelta ora determinerà come verranno gestiti i permessi 
 nei moduli successivi.
 
+![Gruppi nella OU](screenshots/unità-gruppi.png)
+![Utenti nella OU](screenshots/unità-utenti.png)
 ![Creazione OU LAB_UTENTI](screenshots/ou-utenti.png)
 ![Creazione OU LAB_GRUPPI](screenshots/ou-gruppi.png)
 
@@ -49,8 +51,6 @@ per poter assegnare permessi alle risorse del dominio
 nei moduli successivi.
 
 ![Creazione gruppo](screenshots/creazione-gruppo.png)
-![Gruppi nella OU](screenshots/unità-gruppi.png)
-![Utenti nella OU](screenshots/unità-utenti.png)
 
 ### 4. Assegnazione utenti ai gruppi
 
