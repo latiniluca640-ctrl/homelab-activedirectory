@@ -35,7 +35,6 @@ garantisce che solo l'utente conosca la propria password.
 
 ![Creazione utente](screenshots/creazione-utente.png)
 ![Impostazione password](screenshots/imposta-password.png)
-![Utenti nella OU](screenshots/unità-utenti.png)
 
 ### 3. Creazione gruppi
 Creati due gruppi di sicurezza nella OU `LAB_GRUPPI`:
@@ -51,6 +50,7 @@ nei moduli successivi.
 
 ![Creazione gruppo](screenshots/creazione-gruppo.png)
 ![Gruppi nella OU](screenshots/unità-gruppi.png)
+![Utenti nella OU](screenshots/unità-utenti.png)
 
 ### 4. Assegnazione utenti ai gruppi
 
