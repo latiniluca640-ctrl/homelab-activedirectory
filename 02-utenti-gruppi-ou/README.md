@@ -19,8 +19,6 @@ nei moduli successivi.
 
 ![Gruppi nella OU](screenshots/unità-gruppi.png)
 ![Utenti nella OU](screenshots/unità-utenti.png)
-![Creazione OU LAB_UTENTI](screenshots/ou-utenti.png)
-![Creazione OU LAB_GRUPPI](screenshots/ou-gruppi.png)
 
 ### 2. Creazione utenti
 Creati tre utenti nella OU `LAB_UTENTI`:
@@ -37,6 +35,7 @@ garantisce che solo l'utente conosca la propria password.
 
 ![Creazione utente](screenshots/creazione-utente.png)
 ![Impostazione password](screenshots/imposta-password.png)
+![Creazione OU LAB_UTENTI](screenshots/ou-utenti.png)
 
 ### 3. Creazione gruppi
 Creati due gruppi di sicurezza nella OU `LAB_GRUPPI`:
@@ -51,6 +50,7 @@ per poter assegnare permessi alle risorse del dominio
 nei moduli successivi.
 
 ![Creazione gruppo](screenshots/creazione-gruppo.png)
+![Creazione OU LAB_GRUPPI](screenshots/ou-gruppi.png)
 
 ### 4. Assegnazione utenti ai gruppi
 
