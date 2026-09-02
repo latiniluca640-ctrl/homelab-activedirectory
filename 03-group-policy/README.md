@@ -111,7 +111,7 @@ di un account.
 
 ![Rimozione Task Manager](screenshots/rimozione-taskmanager.png)
 
-**Restrizioni PowerShell:**
+**Restrizioni PowerShell (Modelli amministrativi):**
 
 | Impostazione | Valore |
 |---|---|
@@ -119,6 +119,46 @@ di un account.
 | Registrazione blocchi di script | Abilitata |
 
 ![Restrizioni PowerShell](screenshots/restrizioni-powershell.png)
+
+> **Nota:** queste impostazioni regolano solo il
+> comportamento degli script eseguiti, non l'apertura
+> interattiva della shell. Aggiunte regole AppLocker per
+> bloccare l'accesso allo strumento stesso.
+
+**Blocco effettivo di PowerShell — AppLocker:**
+
+Configurate regole AppLocker sotto `Configurazione computer
+→ Criteri → Impostazioni di Windows → Impostazioni protezione
+→ Criteri di controllo dell'applicazione → AppLocker`.
+
+Generate le regole predefinite (Allow) su Program Files,
+Windows e Administrators, prerequisito per non bloccare
+l'intero sistema una volta attivato AppLocker:
+
+![Regole predefinite AppLocker](screenshots/predefinite-applock.png)
+
+Create due regole di blocco (Deny) per `GRP_Utenti_Standard`,
+basate su condizione **Percorso**:
+
+| Eseguibile bloccato | Percorso |
+|---|---|
+| powershell.exe | `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` |
+| powershell_ise.exe | `C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe` |
+
+> **Nota:** bloccato anche `powershell_ise.exe` (ISE, editor
+> grafico di script) insieme alla shell principale, altrimenti
+> resta comunque un modo per eseguire comandi interattivamente.
+
+![Regole eseguibili - blocco PowerShell e ISE](screenshots/bloccoeseguibili-powershell.png)
+
+Configurato inoltre l'avvio automatico del servizio
+**Identità applicazione** (Application Identity) tramite
+GPO Preferences (`Configurazione computer → Preferenze →
+Impostazioni Panel di controllo → Servizi`) — condizione
+necessaria affinché AppLocker applichi effettivamente
+le regole sulla macchina target.
+
+![Servizio Identità applicazione](screenshots/servizio-appidentity.png)
 
 **Security Filtering:** applicata solo a
 `GRP_Utenti_Standard`.
@@ -152,7 +192,6 @@ del modulo.
 - **Security Controls** (SY0-701 – 1.1):
   GPO come esempio di controllo preventivo automatizzato
 - **Hardening** (SY0-701 – 4.1):
-  restrizioni CMD, PowerShell e Task Manager
-  riducono la superficie di attacco
-- **Brute Force Protection** (SY0-701 – 2.4):
-  blocco account dopo 5 tentativi falliti
+  AppLocker come application allowlisting/denylisting,
+  riduzione della superficie di attacco tramite restrizione
+  degli strumenti eseguibili disponibili all'utente
