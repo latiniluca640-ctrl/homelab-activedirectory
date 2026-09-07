@@ -45,7 +45,7 @@ interna dedicata, con IP statici assegnati manualmente:
 ### 5. Verifica di connettività
 Testata la comunicazione tra le due macchine sulla rete interna
 tramite ping in entrambe le direzioni.
-![Verifica ping DC-Kali](screenshots/connessione-kali-labnet-interno.png)
+![Verifica ping DC-Kali](screenshots/connessionekali-lab-interno.png)
 Il test conferma che Kali-PT01 comunica correttamente con il Domain
 Controller sulla rete `labnet-interno`, isolata dal traffico NAT.
 ## Risultato
