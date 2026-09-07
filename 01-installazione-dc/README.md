@@ -57,7 +57,7 @@ costante dal futuro client e stabilità del servizio DNS.
 |-----------|--------|
 | IP | 10.0.2.15 |
 | Subnet mask | 255.255.255.0 |
-| Gateway | 10.0.2.1 |
+| Gateway | 10.0.2.2 |
 | DNS primario | 10.0.2.15 |
 
 ![Configurazione IP statico](screenshots/ip-statico.png)
@@ -107,6 +107,9 @@ suffisso DNS `lab.local` conferma l'elevazione a DC.
 Server operativo come Domain Controller del dominio 
 `lab.local` con ruoli AD DS e DNS attivi.
 
+Nota: modulo esteso successivamente — vedi sezione
+Modifiche successive.
+
 ## Snapshot
 `02-DC01-AD-DNS-configurato` — stato del sistema 
 al termine del modulo.
@@ -116,3 +119,28 @@ al termine del modulo.
   autenticazione del dominio
 - **Identity and Access Management** (SY0-701 – 4.6): 
   gestione centralizzata delle identità tramite AD
+
+## Modifiche successive
+
+### Modifica 1 — Seconda scheda di rete per comunicazione con Kali
+Aggiunta una seconda scheda di rete (Rete interna,
+`labnet-interno`) per permettere la comunicazione diretta
+con la macchina Kali introdotta nel Modulo 04 — la
+motivazione architetturale completa (perché una rete
+dedicata, perché non Host-only) è descritta nel
+[Modulo 04](../04-kali-linux/README.md).
+
+| Parametro | Valore |
+|-----------|--------|
+| IP | 192.168.56.10 |
+| Subnet mask | 255.255.255.0 |
+| Gateway | (nessuno — rete isolata) |
+
+![Panoramica doppia scheda](screenshots/dc-doppiascheda.png)
+![Configurazione scheda interna](screenshots/dc-schedainterna.png)
+
+Connettività verificata tramite ping verso Kali sulla
+rete interna, a completamento del test bidirezionale
+già documentato nel Modulo 04.
+
+![Verifica ping DC-Kali](screenshots/connessionedc-lab-interno.png)
