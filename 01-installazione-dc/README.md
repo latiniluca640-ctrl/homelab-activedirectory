@@ -16,7 +16,6 @@ Creata VM con nome `WinServer-DC01` con allocazione
 dinamica del disco per ottimizzare lo spazio su SSD.
 Installazione manuale per documentare ogni passaggio.
 
-![Configurazione VM](screenshots/sistema-operativo.png)
 ![Hardware virtuale](screenshots/hardware-VM.png)
 ![Disco fisso virtuale](screenshots/disco-fisso-virtuale.png)
 
@@ -40,7 +39,6 @@ e abilitare le funzionalità di integrazione con il sistema host.
 
 Avviato il setup tramite il CD virtuale montato da VirtualBox.
 
-![Benvenuto installer](screenshots/guest-benvenuto.png)
 ![Componenti da installare](screenshots/guest-installazione.png)
 
 ### 4. Primo avvio e Server Manager
@@ -60,8 +58,6 @@ costante dal futuro client e stabilità del servizio DNS.
 | Gateway | 10.0.2.2 |
 | DNS primario | 10.0.2.15 |
 
-![Configurazione IP statico](screenshots/ip-statico.png)
-
 Verifica tramite `ipconfig /all` — IP `10.0.2.15` e
 subnet mask `255.255.255.0` confermano la corretta
 configurazione statica.
@@ -78,7 +74,6 @@ Creato snapshot `01-OS-installato-GuestAdditions` prima
 di procedere con l'installazione di AD DS — punto di 
 ripristino in caso di errori.
 
-![Creazione snapshot](screenshots/rinomina-istantanea.png)
 ![Snapshot salvato](screenshots/istantanea.png)
 
 ### 8. Installazione ruolo AD DS
@@ -93,9 +88,7 @@ e dominio `lab.local`. Installato contestualmente il
 ruolo DNS, necessario per la risoluzione dei nomi 
 all'interno del dominio.
 
-![Configurazione foresta](screenshots/creazione-forestaactivedirectory.png)
 ![Opzioni controller di dominio](screenshots/passwordefunzionalità-activedirectory.png)
-![Controllo prerequisiti superato](screenshots/inalzamento.png)
 
 ### 10. Verifica post-elevazione
 Verificata la corretta configurazione tramite `ipconfig /all` —
