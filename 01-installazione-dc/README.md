@@ -16,7 +16,6 @@ Creata VM con nome `WinServer-DC01` con allocazione
 dinamica del disco per ottimizzare lo spazio su SSD.
 Installazione manuale per documentare ogni passaggio.
 
-![Hardware virtuale](screenshots/hardware-VM.png)
 ![Disco fisso virtuale](screenshots/disco-fisso-virtuale.png)
 
 ### 2. Installazione sistema operativo
@@ -35,28 +34,15 @@ Installate le Guest Additions (AMD64) tramite il menu
 Dispositivi di VirtualBox per migliorare la risoluzione 
 e abilitare le funzionalità di integrazione con il sistema host.
 
-![Inserimento Guest Additions](screenshots/guest-addiction.png)
-
-Avviato il setup tramite il CD virtuale montato da VirtualBox.
-
-![Componenti da installare](screenshots/guest-installazione.png)
-
 ### 4. Primo avvio e Server Manager
 Server Manager si avvia automaticamente al primo accesso
 — punto di controllo centrale per la gestione del server.
-
-![Server Manager primo avvio](screenshots/server-manager.png)
 
 ### 5. Configurazione di rete
 Impostato IP statico per garantire raggiungibilità 
 costante dal futuro client e stabilità del servizio DNS.
 
-| Parametro | Valore |
-|-----------|--------|
-| IP | 10.0.2.15 |
-| Subnet mask | 255.255.255.0 |
-| Gateway | 10.0.2.2 |
-| DNS primario | 10.0.2.15 |
+![Configurazione IP statico](screenshots/ip-statico.png)
 
 Verifica tramite `ipconfig /all` — IP `10.0.2.15` e
 subnet mask `255.255.255.0` confermano la corretta
@@ -80,8 +66,6 @@ ripristino in caso di errori.
 Installato il ruolo Servizi di dominio Active Directory 
 tramite Server Manager → Aggiungi ruoli e funzionalità.
 
-![Inizio elevazione](screenshots/inizio-active-directory.png)
-
 ### 9. Elevazione a Domain Controller
 Elevato il server a Domain Controller con nuova foresta 
 e dominio `lab.local`. Installato contestualmente il 
@@ -89,6 +73,7 @@ ruolo DNS, necessario per la risoluzione dei nomi
 all'interno del dominio.
 
 ![Opzioni controller di dominio](screenshots/passwordefunzionalità-activedirectory.png)
+![Controllo prerequisiti superato](screenshots/inalzamento.png)
 
 ### 10. Verifica post-elevazione
 Verificata la corretta configurazione tramite `ipconfig /all` —
